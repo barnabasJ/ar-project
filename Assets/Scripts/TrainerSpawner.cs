@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner : MonoBehaviour
+public class TrainerSpawner : MonoBehaviour
 {
-    public GameObject objectToSpawn;
+    public GameObject exercise;
     private PlacementIndicator placementIndicator;
+    private Action<GameObject> onSpawnAction;
 
     private void Start()
     {
@@ -17,8 +18,15 @@ public class ObjectSpawner : MonoBehaviour
     {
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
-            var obj = Instantiate(objectToSpawn, placementIndicator.transform.position,
+            var trainerModel = exercise.GetComponent<ExerciseController>().trainerModel;
+            var obj = Instantiate(trainerModel, placementIndicator.transform.position,
                 placementIndicator.transform.rotation);
+            onSpawnAction(obj);
         }
+    }
+
+    public void onSpawn(Action<GameObject> action)
+    {
+        onSpawnAction = action;
     }
 }
