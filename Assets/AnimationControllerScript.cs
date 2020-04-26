@@ -36,7 +36,7 @@ public class AnimationControllerScript : MonoBehaviour
     //Accepts duration in seconds, no less than 30 seconds
     void setPlankDuration(int duration)
     {
-        this.animatorController.SetInteger("PlankTimeMultiplier", duration);
+        this.animatorController.SetInteger("PlankTimeMultiplier", (duration * 4) / 3);
     }
 
     void setPushUpNumber(int number)
