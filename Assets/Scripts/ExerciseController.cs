@@ -9,12 +9,18 @@ public class ExerciseController : MonoBehaviour
     public GameObject trainerModel;
     [SerializeField] private int repetitions;
     [SerializeField] private float duration;
+    [SerializeField] [Range(0, 1f)] float progress;
 
     private GameObject repetionButtonObject;
     private GameObject durationButtonObject;
     private GameObject startButtonObject;
     private GameObject stopButtonObject;
     private GameObject spawnerObject;
+
+    private GameObject repetitionCircleObject;
+    private GameObject durationCircleObject;
+
+
     private TrainerSpawner spawner;
     private bool started = false;
     private bool finished = false;
@@ -30,6 +36,13 @@ public class ExerciseController : MonoBehaviour
         startButtonObject = GameObject.FindWithTag("StartButton");
         stopButtonObject = GameObject.FindWithTag("StopButton");
         spawnerObject = GameObject.FindWithTag("Spawner");
+
+        //UI animations
+        repetitionCircleObject = GameObject.FindWithTag("RepetitionCircle");
+        durationCircleObject = GameObject.FindWithTag("DurationCircle");
+
+
+
         spawnerObject.SetActive(true);
         spawner = spawnerObject.GetComponent<TrainerSpawner>();
         spawner.exercise = gameObject;
@@ -41,6 +54,7 @@ public class ExerciseController : MonoBehaviour
 
         // setup buttons 
         stopButtonObject.SetActive(false);
+        //trial
         startButtonObject.SetActive(false);
         startButtonObject.GetComponent<Button>().onClick.AddListener(toggleStart);
     }
@@ -48,8 +62,11 @@ public class ExerciseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
+
         updateInfoButtons();
         updateStatus();
+
     }
 
     void updateStatus()
@@ -73,6 +90,19 @@ public class ExerciseController : MonoBehaviour
 
     void updateInfoButtons()
     {
+        //Ui COMPONENTS
+
+
+
+        var durAnimation  = durationCircleObject.GetComponent<Image>();
+        durAnimation.fillAmount = duration;
+
+        var repAnimation = repetitionCircleObject.GetComponent<Image>();
+        repAnimation.fillAmount = repetitions;
+
+
+
+
         var repText = repetionButtonObject.GetComponentInChildren<TextMeshProUGUI>();
         repText.text = $"{currentRepetion}/{repetitions}";
 

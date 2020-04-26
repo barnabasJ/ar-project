@@ -10,6 +10,8 @@ TagManager:
   - StopButton
   - Exercise
   - Spawner
+  - RepetitionCircle
+  - DurationCircle
   layers:
   - Default
   - TransparentFX
