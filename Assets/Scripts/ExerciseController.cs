@@ -78,14 +78,14 @@ public class ExerciseController : MonoBehaviour
             {
                 currentDuration = 0;
                 currentRepetion += 1;
-                started = false;
+                started = false; 
 
                 if (currentRepetion >= repetitions)
                 {
                     finished = true;
                 }
             }
-        }
+        }       
     }
 
     void updateInfoButtons()
@@ -95,10 +95,13 @@ public class ExerciseController : MonoBehaviour
 
 
         var durAnimation  = durationCircleObject.GetComponent<Image>();
-        durAnimation.fillAmount = duration;
+        durAnimation.fillAmount = currentDuration/duration;
 
         var repAnimation = repetitionCircleObject.GetComponent<Image>();
-        repAnimation.fillAmount = repetitions;
+        repAnimation.fillAmount = Mathf.Round(currentRepetion / repetitions);
+        Debug.Log(Mathf.Round(currentRepetion / repetitions));
+
+
 
 
 
