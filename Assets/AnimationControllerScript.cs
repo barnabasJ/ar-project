@@ -31,6 +31,9 @@ public class AnimationControllerScript : MonoBehaviour
             case Exercise.PushUp:
                 this.animatorController.SetInteger("ExcerciseNumber", 2);
                 break;
+            case Exercise.Situp:
+                this.animatorController.SetInteger("ExcerciseNumber", 3);
+                break;
         }
     }
 
@@ -43,6 +46,11 @@ public class AnimationControllerScript : MonoBehaviour
     void setPushUpNumber(int number)
     {
         this.animatorController.SetInteger("PushUpsRemaining", number);
+    }
+
+    void setSitupNumber(int number)
+    {
+        this.animatorController.SetInteger("SitupsRemaining", number);
     }
 
     // Update is called once per frame
