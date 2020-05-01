@@ -99,7 +99,7 @@ public class ExerciseController : MonoBehaviour
 
         var repAnimation = repetitionCircleObject.GetComponent<Image>();
         repAnimation.fillAmount = Mathf.Round(currentRepetion / repetitions);
-        Debug.Log(Mathf.Round(currentRepetion / repetitions));
+        Debug.Log("Haha");
 
 
 
