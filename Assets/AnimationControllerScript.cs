@@ -7,7 +7,8 @@ using UnityEditor;
 public enum Exercise
 {
     Plank = 1,
-    PushUp = 2
+    PushUp = 2,
+    Situp = 3
 }
 
 public class AnimationControllerScript : MonoBehaviour
