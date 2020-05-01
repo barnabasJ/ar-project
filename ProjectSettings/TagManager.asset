@@ -12,6 +12,15 @@ TagManager:
   - Spawner
   - RepetitionCircle
   - DurationCircle
+  - PlankButton
+  - PushUpsButton
+  - SitupsButton
+  - UserInput
+  - DurationInput
+  - RepetitionInput
+  - StartGame
+  - StartTrainingButton
+  - DataController
   layers:
   - Default
   - TransparentFX

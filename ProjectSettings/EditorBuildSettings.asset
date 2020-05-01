@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: b676da9c19b3f4aee889e113457b4a1d
+  - enabled: 1
+    path: Assets/Scenes/Barnabas.unity
+    guid: 40d635bdfa8dd2a139e6d86850a20172
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5ed9198784ec2261ba887732f1d7d11d,
       type: 2}

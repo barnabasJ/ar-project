@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class ExerciseController : MonoBehaviour
 {
+
+
     public GameObject trainerModel;
-    [SerializeField] private int repetitions;
-    [SerializeField] private float duration;
+    private float repetitions = SelectExcercise.repetitions;
+    private float duration = SelectExcercise.duration;
     [SerializeField] [Range(0, 1f)] float progress;
 
     private GameObject repetionButtonObject;
@@ -62,10 +64,11 @@ public class ExerciseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+
 
         updateInfoButtons();
         updateStatus();
+        Debug.Log(repetitions);
 
     }
 
@@ -78,14 +81,14 @@ public class ExerciseController : MonoBehaviour
             {
                 currentDuration = 0;
                 currentRepetion += 1;
-                started = false; 
+                started = false;
 
                 if (currentRepetion >= repetitions)
                 {
                     finished = true;
                 }
             }
-        }       
+        }
     }
 
     void updateInfoButtons()
@@ -94,14 +97,11 @@ public class ExerciseController : MonoBehaviour
 
 
 
-        var durAnimation  = durationCircleObject.GetComponent<Image>();
-        durAnimation.fillAmount = currentDuration/duration;
+        var durAnimation = durationCircleObject.GetComponent<Image>();
+        durAnimation.fillAmount = duration;
 
         var repAnimation = repetitionCircleObject.GetComponent<Image>();
-        repAnimation.fillAmount = Mathf.Round(currentRepetion / repetitions);
-        Debug.Log("Haha");
-
-
+        repAnimation.fillAmount = repetitions;
 
 
 
