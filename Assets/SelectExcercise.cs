@@ -21,10 +21,19 @@ public class SelectExcercise : MonoBehaviour
     public static float repetitions;
     public static float duration;
 
+    // mapę
+    public static Dictionary<string, bool> excercises = new Dictionary<string, bool>()
+    {
 
-    bool plank = false;
-    bool pushup = false;
-    bool situp = false;
+        ["plank"] = false,
+        ["pushups"] = false,
+        ["situps"] = false
+        
+   };
+
+    public static bool  plank = false;
+    public static bool pushup = false;
+    public static bool situp = false;
 
     
 
@@ -36,42 +45,35 @@ public class SelectExcercise : MonoBehaviour
         situpButton = GameObject.FindWithTag("SitupsButton");
         startTrainingButton = GameObject.FindWithTag("StartTrainingButton");
 
-        plankButton.GetComponent<Button>().onClick.AddListener(() => plank = !plank);
-        pushupButton.GetComponent<Button>().onClick.AddListener(() => pushup = !pushup);
-        situpButton.GetComponent<Button>().onClick.AddListener(() => situp = !situp);
+        plankButton.GetComponent<Button>().onClick.AddListener(() => excercises["plank"] = !excercises["plank"]);
+        pushupButton.GetComponent<Button>().onClick.AddListener(() => excercises["pushups"] = !excercises["pushups"]);
+        situpButton.GetComponent<Button>().onClick.AddListener(() => excercises["situps"] = !excercises["situps"]);
+
+        //lISTENER THAT RULES START THE TRAINING 
         startTrainingButton.GetComponent<Button>().onClick.AddListener(launchTraining);
 
         //UserInput
         repetitionInput = GameObject.FindWithTag("RepetitionInput");
         durationInput = GameObject.FindGameObjectWithTag("DurationInput");
 
+        plankButton.GetComponent<Image>().color = Color.yellow;
+        pushupButton.GetComponent<Image>().color = Color.yellow;
+        situpButton.GetComponent<Image>().color = Color.yellow;
+
+
     }
 
     // Update is called once per frame void Update()
     void Update()
-    {
-        //getting update from keyboard
-
-        
+    {        
     }
 
 
     void launchTraining()
     {
-        if ((plank || pushup || situp == true ) && correctUserInput() )
-
-        {
-            
-            //Debug.Log("Done");
-            //string log = durationInput.GetComponent<InputField>().text;
-
-            //Debug.Log(log);
-            //log = repetitionInput.GetComponent<InputField>().text;
-            //Debug.Log(log.ToString());
+      
+            if(correctUserInput() && atLeastOneInDicWasSelected())
             SceneManager.LoadScene("Barnabas");
-
-        }
-
     }
 
 
@@ -81,21 +83,43 @@ public class SelectExcercise : MonoBehaviour
 
         bool result = true;
 
-        try
+        float testRep;
+        float testDur;
+
+        if (
+            float.TryParse(repetitionInput.GetComponent<InputField>().text, out testRep) &&
+            float.TryParse(durationInput.GetComponentInChildren<InputField>().text, out testDur) &&
+            (testRep) > 0 && (testDur > 0)
+
+           )
         {
-            float.TryParse(repetitionInput.GetComponent<InputField>().text, out repetitions);
-            float.TryParse(durationInput.GetComponentInChildren<InputField>().text, out duration);
+
+            repetitions = testRep;
+            duration = testDur;
 
             Debug.Log(repetitions);
             Debug.Log(duration);
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine($"Unable to parse");
-            result = false;
-        }
-        return result;
-    }
-   
 
-}
+            return true;
+        }
+
+        else return false;
+    }
+
+        bool atLeastOneInDicWasSelected()
+        {
+            
+            foreach (var ex in excercises)
+                {
+                    if (ex.Value == true)
+                    {
+                     return true;
+                    }
+                }
+            return false;
+            
+        
+        }
+    }
+
+

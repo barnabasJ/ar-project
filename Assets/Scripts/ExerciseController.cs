@@ -9,8 +9,16 @@ public class ExerciseController : MonoBehaviour
 
 
     public GameObject trainerModel;
+
+    //DATA TRANSFERED FROM MAIN MENU USING STATIC FLOAT
     private float repetitions = SelectExcercise.repetitions;
     private float duration = SelectExcercise.duration;
+    //DICTIONARY OF EXCERCISE AN THEIR VALUES
+    private static Dictionary<string, bool> excercises = SelectExcercise.excercises;
+
+
+
+
     [SerializeField] [Range(0, 1f)] float progress;
 
     private GameObject repetionButtonObject;
@@ -98,10 +106,10 @@ public class ExerciseController : MonoBehaviour
 
 
         var durAnimation = durationCircleObject.GetComponent<Image>();
-        durAnimation.fillAmount = duration;
+        durAnimation.fillAmount = currentDuration/duration;
 
         var repAnimation = repetitionCircleObject.GetComponent<Image>();
-        repAnimation.fillAmount = repetitions;
+        repAnimation.fillAmount = currentRepetion*currentDuration/repetitions;
 
 
 
