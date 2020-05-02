@@ -335,9 +335,9 @@ MonoBehaviour:
     m_Options:
     - m_Text: Select Exercise
       m_Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    - m_Text: Plank Long
+    - m_Text: Plank
       m_Image: {fileID: 0}
-    - m_Text: Plank Short
+    - m_Text: PushUp
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -391,8 +391,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exercises:
-  - {fileID: 8631146915740508913, guid: 5ff149b27ac2a14a9a56dcf404d2169c, type: 3}
   - {fileID: 1432816631358829493, guid: 7d8d58ce284094a6fafbaa18dabe3210, type: 3}
+  - {fileID: 317678111008427452, guid: 68afc4286bf46f1d7b41ce670b83f21b, type: 3}
 --- !u!1 &183208942
 GameObject:
   m_ObjectHideFlags: 0
