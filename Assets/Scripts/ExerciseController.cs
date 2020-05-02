@@ -93,6 +93,11 @@ public class ExerciseController : MonoBehaviour
     {
         if (!finished && trainerPlaced)
             started = !started;
+
+        if (started)
+        {
+            trainerModelObject.GetComponent<AnimationControllerScript>().startExercise();
+        }
     }
 
     public void stop()
