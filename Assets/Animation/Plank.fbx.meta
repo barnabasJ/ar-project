@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: a82d73b848d5a123baabfb6c7608ddc1
+guid: 6247e3988abb23845984fb2b363d5889
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Idle To Push Up
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle To Push Up
+      name: mixamo.com
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 63
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

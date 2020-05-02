@@ -1,18 +1,10 @@
-﻿using UnityEngine;
-
-public enum Exercise
-{
-    Plank = 1,
-    PushUp = 2,
-    Situp = 3
-}
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class AnimationControllerScript : MonoBehaviour
 {
-    public int exerciseNumber;
-    public int plankTime = 0;
-    public int pushUps;
-    public int situps;
+    public int exerciseParameter = 0;
     private Animator animatorController;
 
     // Start is called before the first frame update
@@ -23,9 +15,7 @@ public class AnimationControllerScript : MonoBehaviour
 
     public void startExercise()
     {
-        animatorController.SetInteger("SitupsRemaining", situps);
-        animatorController.SetInteger("PushUpsRemaining", pushUps);
-        animatorController.SetInteger("PlankTimeMultiplier", (plankTime * 4) / 3);
-        animatorController.SetInteger("ExerciseNumber", exerciseNumber);
+        animatorController.SetInteger("ExerciseParameter", exerciseParameter);
+        animatorController.SetTrigger("StartExercise");
     }
 }
