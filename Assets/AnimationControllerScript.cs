@@ -21,18 +21,19 @@ public class AnimationControllerScript : MonoBehaviour
         this.animatorController = GetComponent<Animator>();
     }
 
+    //Use this to select the exercise
     void setExercise(Exercise exercise)
     {
         switch(exercise)
         {
             case Exercise.Plank:
-                this.animatorController.SetInteger("ExcerciseNumber", 1);
+                this.animatorController.SetInteger("ExerciseNumber", 1);
                 break;
             case Exercise.PushUp:
-                this.animatorController.SetInteger("ExcerciseNumber", 2);
+                this.animatorController.SetInteger("ExerciseNumber", 2);
                 break;
             case Exercise.Situp:
-                this.animatorController.SetInteger("ExcerciseNumber", 3);
+                this.animatorController.SetInteger("ExerciseNumber", 3);
                 break;
         }
     }
