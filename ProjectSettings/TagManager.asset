@@ -10,6 +10,7 @@ TagManager:
   - StopButton
   - Exercise
   - Spawner
+  - ExerciseDropdown
   layers:
   - Default
   - TransparentFX

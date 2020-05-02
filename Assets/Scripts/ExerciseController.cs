@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class ExerciseController : MonoBehaviour
     [SerializeField] private int repetitions;
     [SerializeField] private float duration;
 
+    private GameObject trainerModelObject;
     private GameObject repetionButtonObject;
     private GameObject durationButtonObject;
     private GameObject startButtonObject;
@@ -24,25 +26,27 @@ public class ExerciseController : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Start Exercise: " + gameObject);
         // get other objects
         repetionButtonObject = GameObject.FindWithTag("RepetitionButton");
         durationButtonObject = GameObject.FindWithTag("DurationButton");
         startButtonObject = GameObject.FindWithTag("StartButton");
         stopButtonObject = GameObject.FindWithTag("StopButton");
         spawnerObject = GameObject.FindWithTag("Spawner");
-        spawnerObject.SetActive(true);
         spawner = spawnerObject.GetComponent<TrainerSpawner>();
         spawner.exercise = gameObject;
         spawner.onSpawn(obj =>
         {
             spawnerObject.SetActive(false);
             trainerPlaced = true;
+            trainerModelObject = obj;
         });
 
         // setup buttons 
         stopButtonObject.SetActive(false);
         startButtonObject.SetActive(false);
         startButtonObject.GetComponent<Button>().onClick.AddListener(toggleStart);
+        stopButtonObject.GetComponent<Button>().onClick.AddListener(stop);
     }
 
     // Update is called once per frame
@@ -92,5 +96,14 @@ public class ExerciseController : MonoBehaviour
     {
         if (!finished && trainerPlaced)
             started = !started;
+    }
+
+    public void stop()
+    {
+        Debug.Log("Destroy Exercise");
+        trainerPlaced = false;
+        spawnerObject.SetActive(true);
+        Destroy(trainerModelObject, 1f);
+        Debug.Log("Exercise destroyed");
     }
 }
