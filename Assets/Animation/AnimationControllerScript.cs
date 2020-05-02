@@ -26,6 +26,6 @@ public class AnimationControllerScript : MonoBehaviour
         animatorController.SetInteger("SitupsRemaining", situps);
         animatorController.SetInteger("PushUpsRemaining", pushUps);
         animatorController.SetInteger("PlankTimeMultiplier", (plankTime * 4) / 3);
-        animatorController.SetInteger("ExcerciseNumber", exerciseNumber);
+        animatorController.SetInteger("ExerciseNumber", exerciseNumber);
     }
 }

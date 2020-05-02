@@ -14,7 +14,7 @@ public class TrainerSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began || Input.GetMouseButtonDown(1))
         {
             var trainerModel = exercise.GetComponent<ExerciseController>().trainerModel;
             var obj = Instantiate(trainerModel, placementIndicator.transform.position,

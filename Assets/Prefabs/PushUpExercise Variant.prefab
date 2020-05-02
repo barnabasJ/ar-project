@@ -10,13 +10,13 @@ PrefabInstance:
     - target: {fileID: 5857236819093185428, guid: 092e43b6f1d36c3e1b7622d82def3fca,
         type: 3}
       propertyPath: m_Name
-      value: PushUpExercise
+      value: PushUpExercise Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5857236819093185429, guid: 092e43b6f1d36c3e1b7622d82def3fca,
         type: 3}
       propertyPath: trainerModel
       value: 
-      objectReference: {fileID: 6493052537264938559, guid: 38dd11ace927d7ffe8c7897db2b642c3,
+      objectReference: {fileID: 7222893747026019657, guid: 3d96230aa3c4046548912c85f32f9f8a,
         type: 3}
     - target: {fileID: 5857236819093185429, guid: 092e43b6f1d36c3e1b7622d82def3fca,
         type: 3}
