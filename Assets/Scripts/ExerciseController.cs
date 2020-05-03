@@ -104,6 +104,8 @@ public class ExerciseController : MonoBehaviour
     {
         Debug.Log("Destroy Exercise");
         trainerPlaced = false;
+        stopButtonObject.SetActive(true);
+        startButtonObject.SetActive(true);
         spawnerObject.SetActive(true);
         Destroy(trainerModelObject, 1f);
         Debug.Log("Exercise destroyed");

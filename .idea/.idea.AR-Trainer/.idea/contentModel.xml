@@ -7,8 +7,14 @@
       <e p="AR-Trainer.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Animation" t="Include">
+          <e p="AnimationControllerScript.cs" t="Include" />
+          <e p="AnimationExit.cs" t="Include" />
+          <e p="RemainingExercise.cs" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="ExerciseController.cs" t="Include" />
+          <e p="ExerciseDropdownController.cs" t="Include" />
           <e p="PlacementIndicator.cs" t="Include" />
           <e p="TrainerSpawner.cs" t="Include" />
         </e>
