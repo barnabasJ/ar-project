@@ -96,7 +96,7 @@ public class ExerciseController : MonoBehaviour
 
         if (started)
         {
-            trainerModelObject.GetComponent<AnimationControllerScript>().startExercise();
+            trainerModelObject.GetComponent<AnimationControllerScript>().startExercise(10);
         }
     }
 
