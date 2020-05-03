@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AnimationControllerScript : MonoBehaviour
 {
-    public int exerciseParameter = 0;
     private Animator animatorController;
 
     // Start is called before the first frame update
@@ -13,7 +12,7 @@ public class AnimationControllerScript : MonoBehaviour
         this.animatorController = GetComponent<Animator>();
     }
 
-    public void startExercise()
+    public void startExercise(int exerciseParameter)
     {
         animatorController.SetInteger("ExerciseParameter", exerciseParameter);
         animatorController.SetTrigger("StartExercise");
