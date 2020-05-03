@@ -9,7 +9,6 @@
       <e p="Assets" t="Include">
         <e p="Animation" t="Include">
           <e p="AnimationControllerScript.cs" t="Include" />
-          <e p="AnimationExit.cs" t="Include" />
           <e p="RemainingExercise.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
