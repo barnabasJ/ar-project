@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4804064235498328097
+--- !u!1001 &8699785393469058303
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,23 +10,23 @@ PrefabInstance:
     - target: {fileID: 5857236819093185428, guid: 092e43b6f1d36c3e1b7622d82def3fca,
         type: 3}
       propertyPath: m_Name
-      value: PlankExercise Variant
+      value: SitupExercise Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5857236819093185429, guid: 092e43b6f1d36c3e1b7622d82def3fca,
         type: 3}
       propertyPath: trainerModel
       value: 
-      objectReference: {fileID: 8534503330623939987, guid: c838392bc673b8549950473feaab8588,
+      objectReference: {fileID: 6907960252052279727, guid: 0aff3fdf8f1d3204e8b176d45a490641,
         type: 3}
     - target: {fileID: 5857236819093185429, guid: 092e43b6f1d36c3e1b7622d82def3fca,
         type: 3}
       propertyPath: duration
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5857236819093185429, guid: 092e43b6f1d36c3e1b7622d82def3fca,
         type: 3}
       propertyPath: durationToExerciseModificator
-      value: 1.2
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 5857236819093185430, guid: 092e43b6f1d36c3e1b7622d82def3fca,
         type: 3}

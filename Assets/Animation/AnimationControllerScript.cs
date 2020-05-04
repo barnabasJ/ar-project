@@ -14,6 +14,7 @@ public class AnimationControllerScript : MonoBehaviour
 
     public void startExercise(int exerciseParameter)
     {
+        Debug.Log(exerciseParameter);
         animatorController.SetInteger("ExerciseParameter", exerciseParameter);
         animatorController.SetTrigger("StartExercise");
     }

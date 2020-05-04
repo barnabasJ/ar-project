@@ -7,6 +7,7 @@ public class ExerciseController : MonoBehaviour
     public GameObject trainerModel;
     [SerializeField] private int repetitions;
     [SerializeField] private float duration;
+    [SerializeField] private float durationToExerciseModificator;
 
     private GameObject trainerModelObject;
     private GameObject repetionButtonObject;
@@ -20,6 +21,7 @@ public class ExerciseController : MonoBehaviour
     private float currentDuration = 0.0f;
     private int currentRepetion = 0;
     private bool trainerPlaced = false;
+    private bool trainerPlacedLastUpdate = false;
 
     void Start()
     {
@@ -80,11 +82,12 @@ public class ExerciseController : MonoBehaviour
         var durText = durationButtonObject.GetComponentInChildren<TextMeshProUGUI>();
         durText.text = $"{Mathf.Round(duration - currentDuration)}";
 
-        if (trainerPlaced && !startButtonObject.activeInHierarchy)
+        if (trainerPlaced && !trainerPlacedLastUpdate)
             startButtonObject.SetActive(true);
-        else if (!trainerPlaced && startButtonObject.activeInHierarchy)
-            startButtonObject.SetActive(false);
-
+        else
+            startButtonObject.SetActive(!started);
+        trainerPlacedLastUpdate = trainerPlaced; 
+        
         var startText = startButtonObject.GetComponentInChildren<TextMeshProUGUI>();
         startText.text = started ? "Pause" : "Start";
     }
@@ -96,7 +99,9 @@ public class ExerciseController : MonoBehaviour
 
         if (started)
         {
-            trainerModelObject.GetComponent<AnimationControllerScript>().startExercise(10);
+            trainerModelObject
+                .GetComponent<AnimationControllerScript>()
+                .startExercise((int)(duration / durationToExerciseModificator));
         }
     }
 

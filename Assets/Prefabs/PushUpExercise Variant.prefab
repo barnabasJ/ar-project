@@ -28,6 +28,11 @@ PrefabInstance:
       propertyPath: duration
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5857236819093185429, guid: 092e43b6f1d36c3e1b7622d82def3fca,
+        type: 3}
+      propertyPath: durationToExerciseModificator
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5857236819093185430, guid: 092e43b6f1d36c3e1b7622d82def3fca,
         type: 3}
       propertyPath: m_LocalPosition.x
