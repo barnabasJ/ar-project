@@ -11,6 +11,8 @@ TagManager:
   - Exercise
   - Spawner
   - ExerciseDropdown
+  - RepetitionCircle
+  - DurationCircle
   layers:
   - Default
   - TransparentFX

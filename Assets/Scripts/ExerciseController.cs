@@ -15,6 +15,9 @@ public class ExerciseController : MonoBehaviour
     private GameObject startButtonObject;
     private GameObject stopButtonObject;
     private GameObject spawnerObject;
+    private GameObject repetitionCircleObject;
+    private GameObject durationCircleObject;
+
     private TrainerSpawner spawner;
     private bool started = false;
     private bool finished = false;
@@ -32,6 +35,11 @@ public class ExerciseController : MonoBehaviour
         startButtonObject = GameObject.FindWithTag("StartButton");
         stopButtonObject = GameObject.FindWithTag("StopButton");
         spawnerObject = GameObject.FindWithTag("Spawner");
+
+        //UI animations
+        repetitionCircleObject = GameObject.FindWithTag("RepetitionCircle");
+        durationCircleObject = GameObject.FindWithTag("DurationCircle");
+
         spawner = spawnerObject.GetComponent<TrainerSpawner>();
         spawner.exercise = gameObject;
         spawner.onSpawn(obj =>
@@ -76,6 +84,16 @@ public class ExerciseController : MonoBehaviour
 
     void updateInfoButtons()
     {
+
+        var durAnimation = durationCircleObject.GetComponent<Image>();
+        durAnimation.fillAmount = (float)currentDuration /(float)duration;
+
+        var repAnimation = repetitionCircleObject.GetComponent<Image>();
+        repAnimation.fillAmount = (float) currentRepetion / (float)repetitions;
+
+        Debug.Log((float)currentRepetion / (float)repetitions);
+
+
         var repText = repetionButtonObject.GetComponentInChildren<TextMeshProUGUI>();
         repText.text = $"{currentRepetion}/{repetitions}";
 
@@ -86,10 +104,10 @@ public class ExerciseController : MonoBehaviour
             startButtonObject.SetActive(true);
         else
             startButtonObject.SetActive(!started);
-        trainerPlacedLastUpdate = trainerPlaced; 
-        
-        var startText = startButtonObject.GetComponentInChildren<TextMeshProUGUI>();
-        startText.text = started ? "Pause" : "Start";
+        trainerPlacedLastUpdate = trainerPlaced;
+
+        //var startPause = startButtonObject.GetComponentInChildren<TextMeshProUGUI>();
+        //startText.text = started ? "Pause" : "Start";
     }
 
     void toggleStart()
