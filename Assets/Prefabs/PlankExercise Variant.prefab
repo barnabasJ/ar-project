@@ -16,7 +16,7 @@ PrefabInstance:
         type: 3}
       propertyPath: trainerModel
       value: 
-      objectReference: {fileID: 8534503330623939987, guid: c838392bc673b8549950473feaab8588,
+      objectReference: {fileID: 4874504061205820274, guid: 57a63497ac47578f599dcda03a90c836,
         type: 3}
     - target: {fileID: 5857236819093185429, guid: 092e43b6f1d36c3e1b7622d82def3fca,
         type: 3}

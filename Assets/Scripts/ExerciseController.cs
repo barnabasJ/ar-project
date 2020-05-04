@@ -100,7 +100,7 @@ public class ExerciseController : MonoBehaviour
         if (started)
         {
             trainerModelObject
-                .GetComponent<AnimationControllerScript>()
+                .GetComponentInChildren<AnimationControllerScript>()
                 .startExercise((int)(duration / durationToExerciseModificator));
         }
     }
