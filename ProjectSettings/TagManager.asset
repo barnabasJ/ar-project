@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DurationButton
+  - RepetitionButton
+  - StartButton
+  - StopButton
+  - Exercise
+  - Spawner
+  - ExerciseDropdown
   layers:
   - Default
   - TransparentFX
